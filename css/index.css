@@ -1,0 +1,49 @@
+.main {
+    padding: 10px 50px;
+}
+
+.content {
+    vertical-align: top;
+}
+
+.info-wrapper div {
+    margin: 5px auto;
+}
+
+.base-info,
+.content-info {
+    display: inline-block;
+    /*margin-left: 10px;*/
+    vertical-align: top;
+}
+
+label {
+    display: inline-block;
+    width: 150px;
+}
+
+input {
+    width: 30px;
+}
+
+#header {
+    width: 100px;
+}
+
+.content-info textarea {
+    display: block;
+    resize: none;
+    font-size: 16px;
+}
+
+.info-wrapper button {
+    vertical-align: bottom;
+}
+
+#createrArea {
+    position: relative;
+    margin: 10px auto;
+    width: 1120px;
+    height: 500px;
+    border: 1px solid #ccc;
+}

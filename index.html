@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>JSWindow</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="stylesheet" type="text/css" href="css/reset.css">
+    <link rel="stylesheet" type="text/css" href="css/JSWindow.css">
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <!--[if lt IE 9]>
+        <script src="js/html5shiv.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+    <div id="createrArea">
+        <!-- <div class="JSWindow-wrapper">
+            <div class="JSWindow-container selected">
+                <div class="JSWindow-header clearfix">
+                    <label class="JSWindow-header-text">title</label>
+                    <div class="JSWindow-tools">
+                        <span class="JSWindow-min"></span>
+                        <span class="JSWindow-max"></span>
+                        <span class="JSWindow-close"></span>
+                    </div>
+                </div>
+                <div class="JSWindow-content">
+                    <textarea>Content</textarea>
+                </div>
+                <div class="JSWindow-footer">footer</div>
+            </div>
+        </div> -->
+    </div>
+
+    <script type="text/javascript" src="js/Util.js"></script>
+    <script type="text/javascript" src="js/JSWindow.js"></script>
+    <!-- <script type="text/javascript" src="js/index.js"></script> -->
+    <script type="text/javascript">
+        var win = new JSWindow({
+            isVisible  : true,            // 是否可见
+            isDragable : true,            // 是否可拖拽
+            isScalable : false,            // 是否可缩放
+            isCollapse : false,            // 是否收起
+            isMaximize : false,           // 是否最大化
+            hasFooter  : true,            // 是否有底部状态栏
+
+            zIndex     : 1000,            // 层级
+
+            parent     : document.getElementById("createrArea"),
+
+            top        : 0,               // 初始化位置
+            left       : 0,               // 初始化位置
+            width      : 250,             // 初始化宽度
+            minWidth   : 150,             // 最小宽度
+            maxWidth   : 400,             // 最大宽度
+            height     : 250,             // 初始化高度
+            minHeight  : 150,             // 最小高度
+            maxHeight  : 400,             // 最大高度
+
+            header     : "title",         // 窗口标题
+            content    : "content",       // 窗口内容
+            footer     : "footer"         // 窗口底部，状态栏
+        });
+
+        var win1 = new JSWindow({
+            left : 20,
+            top : 30,
+            isCollapse : true,
+            parent     : document.getElementById("createrArea"),
+            header : "win1"
+        });
+
+        var win2 = new JSWindow({
+            left : 50,
+            top : 70,
+            hasFooter : false,
+            isMaximize : true,
+            parent     : document.getElementById("createrArea"),
+            header : "win2"
+        });
+
+        // console.info(Object.prototype.toString.call(document.body));
+    </script>
+</body>
+</html>

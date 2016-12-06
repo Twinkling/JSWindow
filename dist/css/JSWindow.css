@@ -1,0 +1,306 @@
+@charset "UTF-8";
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+/* 清楚浮动 --start-- */
+.clearfix {
+  *zoom: 1; }
+  .clearfix:before, .clearfix:after {
+    content: ' ';
+    display: block; }
+  .clearfix:after {
+    clear: both; }
+
+/* 清除浮动 --end-- */
+.JSWindow-wrapper {
+  position: absolute;
+  width: 200px; }
+
+.JSWindow-container,
+.JSWindow-header,
+.JSWindow-icon,
+.JSWindow-title,
+.JSWindow-tools,
+.JSWindow-content,
+.JSWindow-footer,
+ul,
+li {
+  box-sizing: border-box; }
+
+.JSWindow-container {
+  color: rgba(0, 0, 0, 0.5);
+  background: #d2ecf7;
+  border: 3px solid #d2ecf7; }
+
+.JSWindow-wrapper.selected .JSWindow-container {
+  color: #000;
+  background: #5cc3ea;
+  border: 3px solid #5cc3ea;
+  box-shadow: 0 0 5px 1px; }
+  .JSWindow-wrapper.selected .JSWindow-container .JSWindow-content textarea {
+    color: #000; }
+  .JSWindow-wrapper.selected .JSWindow-container .JSWindow-loading, .JSWindow-wrapper.selected .JSWindow-container .JSWindow-loading + .message {
+    color: #000; }
+  .JSWindow-wrapper.selected .JSWindow-container .JSWindow-success, .JSWindow-wrapper.selected .JSWindow-container .JSWindow-success + .message {
+    color: green; }
+  .JSWindow-wrapper.selected .JSWindow-container .JSWindow-error, .JSWindow-wrapper.selected .JSWindow-container .JSWindow-error + .message {
+    color: red; }
+
+/* JSWindow-header --start-- */
+.JSWindow-header {
+  display: block; }
+
+.JSWindow-icon,
+.JSWindow-title,
+.JSWindow-tools {
+  display: inline-block;
+  height: 20px;
+  vertical-align: text-bottom; }
+
+.JSWindow-icon {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: -webkit-radial-gradient(circle, blue, #fff);
+  background: radial-gradient(circle, blue, #fff); }
+
+.JSWindow-title {
+  width: 100px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding-left: 6px; }
+
+.JSWindow-tools {
+  float: right; }
+
+.JSWindow-min,
+.JSWindow-max,
+.JSWindow-restore,
+.JSWindow-close {
+  display: inline-block;
+  position: relative;
+  width: 20px;
+  height: 20px; }
+  .JSWindow-min:hover,
+  .JSWindow-max:hover,
+  .JSWindow-restore:hover,
+  .JSWindow-close:hover {
+    background: #3665B3; }
+    .JSWindow-min:hover:before, .JSWindow-min:hover:after,
+    .JSWindow-max:hover:before,
+    .JSWindow-max:hover:after,
+    .JSWindow-restore:hover:before,
+    .JSWindow-restore:hover:after,
+    .JSWindow-close:hover:before,
+    .JSWindow-close:hover:after {
+      color: #fff; }
+
+.JSWindow-close:hover {
+  background: red; }
+
+.JSWindow-min:before,
+.JSWindow-max:before,
+.JSWindow-restore:before,
+.JSWindow-restore:after,
+.JSWindow-close:before,
+.JSWindow-close:after {
+  content: ' ';
+  position: absolute;
+  color: #666;
+  margin: 0 4px;
+  width: 12px;
+  box-shadow: inset 0 0 0 2px;
+  pointer-events: none; }
+
+.JSWindow-min:before {
+  bottom: 3px;
+  height: 2px; }
+
+.JSWindow-max:before {
+  bottom: 3px;
+  height: 12px; }
+
+.JSWindow-close:before,
+.JSWindow-close:after {
+  top: 50%;
+  -webkit-transform-origin: 50% 50%;
+          transform-origin: 50% 50%;
+  height: 2px; }
+
+.JSWindow-close:before {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg); }
+
+.JSWindow-close:after {
+  -webkit-transform: rotate(135deg);
+          transform: rotate(135deg); }
+
+.JSWindow-restore:before {
+  bottom: 3px;
+  width: 10px;
+  height: 10px;
+  box-shadow: inset 0 0 0 3px; }
+
+.JSWindow-restore:after {
+  bottom: 3px;
+  width: 11px;
+  height: 11px;
+  box-shadow: 2px -2px, 2px -2px; }
+
+/* JSWindow-header --end-- */
+/* JSWindow-content --start-- */
+.JSWindow-content {
+  height: 200px; }
+
+.JSWindow-content textarea {
+  color: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  border: none;
+  outline: none;
+  resize: none; }
+
+/* JSWindow-content --end-- */
+/* JSWindow-footer --start-- */
+.JSWindow-status {
+  display: inline-block;
+  height: 20px;
+  float: right; }
+
+.JSWindow-loading,
+.JSWindow-success,
+.JSWindow-error {
+  box-sizing: border-box;
+  display: inline-block;
+  position: relative;
+  vertical-align: text-bottom;
+  width: 20px;
+  height: 20px; }
+  .JSWindow-loading:before, .JSWindow-loading:after,
+  .JSWindow-success:before,
+  .JSWindow-success:after,
+  .JSWindow-error:before,
+  .JSWindow-error:after {
+    box-sizing: border-box;
+    content: ' ';
+    display: block;
+    position: absolute;
+    width: 2px;
+    height: 2px; }
+
+.JSWindow-loading {
+  border: 2px solid;
+  border-top-color: transparent;
+  border-radius: 50%;
+  -webkit-animation: rotate 1.5s linear infinite;
+          animation: rotate 1.5s linear infinite; }
+  .JSWindow-loading, .JSWindow-loading + .message {
+    color: rgba(0, 0, 0, 0.5);
+    vertical-align: middle; }
+  .JSWindow-loading:before {
+    border: 4px solid;
+    left: -2px;
+    border-top: none;
+    border-left-color: transparent;
+    border-right-color: transparent;
+    -webkit-transform: rotate(45deg);
+            transform: rotate(45deg); }
+
+.JSWindow-success, .JSWindow-success + .message {
+  color: rgba(0, 255, 0, 0.5);
+  vertical-align: middle; }
+
+.JSWindow-success:before {
+  left: 7px;
+  width: 8px;
+  height: 16px;
+  border-bottom-right-radius: 3px;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  border: 2px solid;
+  border-left-color: transparent;
+  border-top-color: transparent; }
+
+.JSWindow-error, .JSWindow-error + .message {
+  color: rgba(255, 0, 0, 0.5);
+  vertical-align: middle; }
+
+.JSWindow-error:before, .JSWindow-error:after {
+  width: 12px;
+  height: 2px;
+  margin: 0 4px;
+  top: 50%;
+  -webkit-transform-origin: 50% 50%;
+          transform-origin: 50% 50%;
+  box-shadow: inset 0 0 0 1px; }
+
+.JSWindow-error:before {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg); }
+
+.JSWindow-error:after {
+  -webkit-transform: rotate(135deg);
+          transform: rotate(135deg); }
+
+@-webkit-keyframes rotate {
+  0% {
+    -webkit-transform: rotate(0deg) scale(1);
+            transform: rotate(0deg) scale(1); }
+  100% {
+    -webkit-transform: rotate(360deg) scale(1);
+            transform: rotate(360deg) scale(1); } }
+
+@keyframes rotate {
+  0% {
+    -webkit-transform: rotate(0deg) scale(1);
+            transform: rotate(0deg) scale(1); }
+  100% {
+    -webkit-transform: rotate(360deg) scale(1);
+            transform: rotate(360deg) scale(1); } }
+
+/* JSWindow-footer --end-- */

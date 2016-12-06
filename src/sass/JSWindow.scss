@@ -1,0 +1,299 @@
+// @import "normalize";
+@import "reset";
+
+/* 清楚浮动 --start-- */
+.clearfix {
+    *zoom: 1;
+    &:before, &:after {
+        content: ' ';
+        display: block;
+    }
+    &:after {
+        clear: both;
+    }
+}
+/* 清除浮动 --end-- */
+
+$selected: #5cc3ea;
+$backgroundColor: #d2ecf7;
+$header-height: 20px;
+$toolWidth: 20px;
+
+// .JSWindow-container
+
+.JSWindow-wrapper {
+    position: absolute;
+    width: 200px;
+}
+
+.JSWindow-container,
+.JSWindow-header,
+.JSWindow-icon,
+.JSWindow-title,
+.JSWindow-tools,
+.JSWindow-content,
+.JSWindow-footer,
+ul,
+li {
+    box-sizing: border-box;
+}
+
+.JSWindow-container {
+    color: rgba(0, 0, 0, .5);
+    background: $backgroundColor;
+    border: 3px solid $backgroundColor;
+}
+
+.JSWindow-wrapper.selected .JSWindow-container{
+    color: #000;
+    background: $selected;
+    border: 3px solid $selected;
+    box-shadow: 0 0 5px 1px;
+    .JSWindow-content textarea {
+        color: #000;
+    }
+
+    .JSWindow-loading, .JSWindow-loading + .message {
+        color: #000;
+    }
+
+    .JSWindow-success, .JSWindow-success + .message {
+        color: green;
+    }
+
+    .JSWindow-error, .JSWindow-error + .message {
+        color: rgb(255, 0, 0);
+    }
+}
+
+
+/* JSWindow-header --start-- */
+.JSWindow-header {
+    display: block;
+    // background: $backgroundColor;
+}
+
+.JSWindow-icon,
+.JSWindow-title,
+.JSWindow-tools {
+    display: inline-block;
+    height: $header-height;
+    vertical-align: text-bottom;
+}
+
+.JSWindow-icon {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: radial-gradient(circle, blue, #fff);
+}
+
+.JSWindow-title {
+    width: 100px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-left: 6px;
+}
+
+.JSWindow-tools {
+    float: right;
+}
+
+.JSWindow-min,
+.JSWindow-max,
+.JSWindow-restore,
+.JSWindow-close {
+    display: inline-block;
+    position: relative;
+    width: $toolWidth;
+    height: $header-height;
+    &:hover {
+        background: #3665B3;
+        &:before, &:after {
+            color: #fff;
+        }
+    }
+}
+
+.JSWindow-close:hover {
+    background: red;
+}
+
+.JSWindow-min:before,
+.JSWindow-max:before,
+.JSWindow-restore:before,
+.JSWindow-restore:after,
+.JSWindow-close:before,
+.JSWindow-close:after {
+    content: ' ';
+    position: absolute;
+    color: #666;
+    margin: 0 4px;
+    width: 12px;
+    box-shadow: inset 0 0 0 2px;
+    pointer-events: none;
+}
+
+.JSWindow-min:before {
+    bottom: 3px;
+    height: 2px;
+}
+
+.JSWindow-max:before {
+    bottom: 3px;
+    height: 12px;
+}
+
+.JSWindow-close:before,
+.JSWindow-close:after {
+    top: 50%;
+    transform-origin: 50% 50%;
+    height: 2px;
+}
+
+.JSWindow-close:before {
+    transform: rotate(45deg);
+}
+
+.JSWindow-close:after {
+    transform: rotate(135deg);
+}
+
+.JSWindow-restore:before {
+    bottom: 3px;
+    width: 10px;
+    height: 10px;
+    box-shadow: inset 0 0 0 3px;
+}
+
+.JSWindow-restore:after {
+    bottom: 3px;
+    // left: 3px;
+    width: 11px;
+    height: 11px;
+    box-shadow: 2px -2px, 2px -2px;
+}
+
+/* JSWindow-header --end-- */
+
+
+/* JSWindow-content --start-- */
+.JSWindow-content {
+    height: 200px;
+}
+
+.JSWindow-content textarea {
+    color: rgba(0, 0, 0, .5);
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    border: none;
+    outline: none;
+    resize: none;
+}
+
+/* JSWindow-content --end-- */
+
+
+/* JSWindow-footer --start-- */
+.JSWindow-footer {
+    // background: $backgroundColor;
+}
+
+.JSWindow-status {
+    display: inline-block;
+    height: 20px;
+    float: right;
+}
+
+.JSWindow-loading,
+.JSWindow-success,
+.JSWindow-error {
+    box-sizing: border-box;
+    display: inline-block;
+    position: relative;
+    vertical-align: text-bottom;
+    width: 20px;
+    height: 20px;
+    // background: #aaa;
+    &:before, &:after {
+        box-sizing: border-box;
+        content: ' ';
+        display: block;
+        position: absolute;
+        width: 2px;
+        height: 2px;
+    }
+}
+
+.JSWindow-loading {
+    &, & + .message {
+        color: rgba(0, 0, 0, .5);
+        vertical-align: middle;
+    }
+
+    border: 2px solid;
+    border-top-color: transparent;
+    border-radius: 50%;
+    animation: rotate 1.5s linear infinite;
+    &:before {
+        border: 4px solid;
+        left: -2px;
+        border-top:none;
+        border-left-color: transparent;
+        border-right-color: transparent;
+        transform: rotate(45deg);
+    }
+}
+
+.JSWindow-success {
+    &, & + .message{
+        color: rgba(0, 255, 0, .5);
+        vertical-align: middle;
+    }
+
+    &:before {
+        left: 7px;
+        width: 8px;
+        height: 16px;
+        border-bottom-right-radius: 3px;
+        transform: rotate(45deg);
+        border: 2px solid;
+        border-left-color: transparent;
+        border-top-color: transparent;
+    }
+}
+
+.JSWindow-error {
+    &, & + .message {
+        color: rgba(255, 0, 0, .5);
+        vertical-align: middle;
+    }
+
+    &:before, &:after {
+        width: 12px;
+        height: 2px;
+        margin: 0 4px;
+        top: 50%;
+        transform-origin: 50% 50%;
+        box-shadow: inset 0 0 0 1px;
+    }
+
+    &:before {
+        transform: rotate(45deg);
+    }
+
+    &:after {
+        transform: rotate(135deg);
+    }
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg) scale(1);
+    }
+    100% {
+        transform: rotate(360deg) scale(1);
+    }
+}
+/* JSWindow-footer --end-- */

@@ -48,7 +48,7 @@ li {
     color: #000;
     background: $selected;
     border: 3px solid $selected;
-    box-shadow: 0 0 5px 1px;
+    box-shadow: 0 0 5px 1px #555;
     .JSWindow-content textarea {
         color: #000;
     }
@@ -62,7 +62,7 @@ li {
     }
 
     .JSWindow-error, .JSWindow-error + .message {
-        color: rgb(255, 0, 0);
+        color: rgb(230, 30, 30);
     }
 }
 
@@ -78,6 +78,7 @@ li {
 .JSWindow-tools {
     display: inline-block;
     height: $header-height;
+    line-height: $header-height;
     vertical-align: text-bottom;
 }
 
@@ -266,7 +267,7 @@ li {
 
 .JSWindow-error {
     &, & + .message {
-        color: rgba(255, 0, 0, .5);
+        color: rgba(230, 30, 30, .5);
         vertical-align: middle;
     }
 

@@ -10,7 +10,12 @@ var gulp = require('gulp'),
     browser = require('browser-sync').create(),
     reload = browser.reload;
 
-gulp.task('script', function() {
+gulp.task('libs', function() {
+    return gulp.src('src/libs/**/*.*')
+        .pipe(gulp.dest('dist/libs'));
+});
+
+gulp.task('script', ['libs'], function() {
     return gulp.src('src/js/**/*.js')
         // .pipe(uglify())
         .pipe(rename({extname: '.min.js'}))

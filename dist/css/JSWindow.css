@@ -80,7 +80,7 @@ li {
   color: #000;
   background: #5cc3ea;
   border: 3px solid #5cc3ea;
-  box-shadow: 0 0 5px 1px; }
+  box-shadow: 0 0 5px 1px #555; }
   .JSWindow-wrapper.selected .JSWindow-container .JSWindow-content textarea {
     color: #000; }
   .JSWindow-wrapper.selected .JSWindow-container .JSWindow-loading, .JSWindow-wrapper.selected .JSWindow-container .JSWindow-loading + .message {
@@ -88,7 +88,7 @@ li {
   .JSWindow-wrapper.selected .JSWindow-container .JSWindow-success, .JSWindow-wrapper.selected .JSWindow-container .JSWindow-success + .message {
     color: green; }
   .JSWindow-wrapper.selected .JSWindow-container .JSWindow-error, .JSWindow-wrapper.selected .JSWindow-container .JSWindow-error + .message {
-    color: red; }
+    color: #e61e1e; }
 
 /* JSWindow-header --start-- */
 .JSWindow-header {
@@ -99,6 +99,7 @@ li {
 .JSWindow-tools {
   display: inline-block;
   height: 20px;
+  line-height: 20px;
   vertical-align: text-bottom; }
 
 .JSWindow-icon {
@@ -267,7 +268,7 @@ li {
   border-top-color: transparent; }
 
 .JSWindow-error, .JSWindow-error + .message {
-  color: rgba(255, 0, 0, 0.5);
+  color: rgba(230, 30, 30, 0.5);
   vertical-align: middle; }
 
 .JSWindow-error:before, .JSWindow-error:after {
